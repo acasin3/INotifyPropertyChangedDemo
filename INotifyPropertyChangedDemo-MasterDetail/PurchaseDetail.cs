@@ -11,8 +11,9 @@ namespace NotifyPropertyMasterDetailDemo
     public class PurchaseDetail : INotifyPropertyChanged
     {
         // These fields hold the values for the public properties.  
-        private int _itemId;
-        private decimal _lineTotal;
+        private int mintItemID;
+        private string mstrTaxCode;
+        private decimal mdecGrossAmount;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -24,41 +25,51 @@ namespace NotifyPropertyMasterDetailDemo
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        internal PurchaseDetail(int itemId, decimal lineTotal)
+        internal PurchaseDetail(int itemId, string taxCode, decimal lineTotal)
         {
-            _itemId = itemId;
-            _lineTotal = lineTotal;
+            mintItemID = itemId;
+            mstrTaxCode = taxCode;
+            mdecGrossAmount = lineTotal;
         }
 
-        public int ItemId
+        public int ItemID
         {
             get
             {
-                return this._itemId;
+                return this.mintItemID;
             }
 
             set
             {
-                if (value != this._itemId)
+                if (value != this.mintItemID)
                 {
-                    this._itemId = value;
+                    this.mintItemID = value;
                     NotifyPropertyChanged();
                 }
             }
         }
 
-        public decimal LineTotal
+        public string TaxCode
         {
             get
             {
-                return _lineTotal;
+                return mstrTaxCode;
             }
+        }
+
+        public decimal GrossAmount
+        {
+            get
+            {
+                return mdecGrossAmount;
+            }
+            
             set
             {
                 // Reject negative values
-                if (value != _lineTotal && value >= 0)
+                if (value != mdecGrossAmount && value >= 0)
                 {
-                    _lineTotal = value;
+                    mdecGrossAmount = value;
                     NotifyPropertyChanged();
                 }
             }

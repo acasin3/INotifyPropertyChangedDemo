@@ -18,7 +18,7 @@ namespace NotifyPropertyMasterDetailDemo
         // Step 1 : Add a module-level variable of type BindingList for the details
         BindingList<PurchaseDetail> _purchaseDetails = new BindingList<PurchaseDetail>();
 
-        // Step 5 : Implement member of the INotifyPropertyChanged interface
+        // Step 4 : Implement member of the INotifyPropertyChanged interface
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Purchase(int docEntry, int docNo, DateTime docDate) 
@@ -30,7 +30,7 @@ namespace NotifyPropertyMasterDetailDemo
             _purchaseDetails.ListChanged += new ListChangedEventHandler(this.PurchaseDetailsChanged);
         }
 
-        // Step 6 : Create the event that handle changes in properties 
+        // Step 5 : Create the event that handle changes in properties 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -45,7 +45,11 @@ namespace NotifyPropertyMasterDetailDemo
         public int DocNo
         {
             get { return _docNo; }
-            set { _docNo = value; }
+            set
+            { 
+                _docNo = value; 
+                NotifyPropertyChanged();
+            }
         }
 
         public DateTime DocDate
@@ -76,10 +80,10 @@ namespace NotifyPropertyMasterDetailDemo
             _total = 0;
             foreach (PurchaseDetail d in _purchaseDetails)
             {
-                _total += d.LineTotal;
+                _total += d.GrossAmount;
             }
 
-            // Step 7 :  Notify event handler
+            // Step 6 :  Notify event handler
             NotifyPropertyChanged("Total");     // Note that class' property is specified
         }
 

@@ -17,8 +17,8 @@ namespace NotifyPropertyMasterDetailDemo
         public Form1()
         {
             InitializeComponent();
-            mobjPurchase.Details.Add(new PurchaseDetail(1, 100));
-            mobjPurchase.Details.Add(new PurchaseDetail(2, 30));
+            mobjPurchase.Details.Add(new PurchaseDetail(1, "VT", 100));
+            mobjPurchase.Details.Add(new PurchaseDetail(2, "ZR", 30));
 
             BindControls();
         }
@@ -33,8 +33,6 @@ namespace NotifyPropertyMasterDetailDemo
 
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            //MessageBox.Show(e.ColumnIndex.ToString());
-            //MessageBox.Show(e.Exception.Message);
             e.Cancel = false;
         }
     }
