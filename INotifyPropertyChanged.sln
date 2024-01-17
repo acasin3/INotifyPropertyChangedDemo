@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INotifyPropertyChangedDemo"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INotifyPropertyChangedDemo-MasterDetail", "INotifyPropertyChangedDemo-MasterDetail\INotifyPropertyChangedDemo-MasterDetail.csproj", "{45654D0C-082C-432E-A579-12D5383FEC14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INotifyPropertyChangedNested", "INotifyPropertyChangedNested\INotifyPropertyChangedNested.csproj", "{B15948A4-B0B3-45EF-8325-81F64CAD5162}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{45654D0C-082C-432E-A579-12D5383FEC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45654D0C-082C-432E-A579-12D5383FEC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45654D0C-082C-432E-A579-12D5383FEC14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B15948A4-B0B3-45EF-8325-81F64CAD5162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15948A4-B0B3-45EF-8325-81F64CAD5162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15948A4-B0B3-45EF-8325-81F64CAD5162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15948A4-B0B3-45EF-8325-81F64CAD5162}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
